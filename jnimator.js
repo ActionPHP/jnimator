@@ -91,36 +91,6 @@
   };
 })( jQuery );
 
-
- 
- //var stepDelay = 0;
- //x = 0;
-
-	
- 	function animateThis( step, delay ){
- 		
- 			sequence = window.sequence;
- 			
- 			nextStepPosition = step;
- 			nextKey = 'step_' + nextStepPosition;
- 			nextStep = sequence[nextKey];
- 		
- 		setTimeout( function() {
- 			
- 			executeStep( nextStep );
- 			stepDelay = Number(sequence[nextKey].delay);
- 			step++;
- 			
- 			if ( step > window.totalSteps ) { return }
- 			animateThis( step, stepDelay );
- 			
- 		}, delay);
- 		
- 	}
- 	
- 	
- 
-  
   	function executeStep ( stepObject ){
   		
   		for ( var step_key in stepObject ){
