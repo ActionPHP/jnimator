@@ -75,7 +75,28 @@
   				 
   		 } );
   		
-  		break;  
+  		break; 
+  		
+  		case 'inF':
+  			
+  			this.delay( delay ).fadeTo( duration, 1, function() { 
+  		
+  				if( typeof options.callback == "function" ){ options.callback.call(); 	 }
+  				 
+  		 } );
+  			
+  		break;
+  		
+  		case 'outF':
+  			
+  			this.delay( delay ).fadeTo( duration, 0, function() { 
+  		
+  				if( typeof options.callback == "function" ){ options.callback.call(); 	 }
+  				 
+  		 } );
+  			
+  			
+  		break;
   		
   		
   	}
@@ -135,4 +156,3 @@
  		}, delay);
  		
  	}
- 	
