@@ -12,7 +12,7 @@
   	distance = options.distance ;
   	callback = options.callback;
   	delay =  Number(options.delay)
-  
+  	
   	switch ( options.direction ){
   		
   		case 'up':
@@ -40,7 +40,7 @@
   		
   			this.delay( delay ).animate( { left: '-='+distance }, duration, function() { 	
   			
-  				if( typeof options.callback == "function" ){ options.callback.call(); }
+  				if( typeof options.callback == "function" ){  options.callback.call(this);  }
   			
   			} );
   		
@@ -125,8 +125,7 @@
 	     the_direction = stepObject[step_key].direction;
 	     the_callback = stepObject[step_key].callback;
 	     
-	    	jQuery( the_id ).jnimator( {  direction: the_direction, distance: the_distance, duration: the_duration,  callback: function(){ }
-	    		 
+	    	jQuery( the_id ).jnimator( {  direction: the_direction, distance: the_distance, duration: the_duration,  callback: the_callback		 
 		} );
 		
 		 }
@@ -150,7 +149,7 @@
  			stepDelay = Number(sequence[nextKey].delay);
  			step++;
  			
- 			if ( step > window.totalSteps ) { return }
+ 			if ( step > window.totalSteps ) {  return }
  			animateThis( step, stepDelay );
  			
  		}, delay);
